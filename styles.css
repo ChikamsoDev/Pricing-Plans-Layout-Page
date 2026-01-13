@@ -1,0 +1,137 @@
+/* Base reset */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  margin: 0;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 40px;
+}
+
+/* Layout container */
+.pricing-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+/* Pricing cards */
+.pricing-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 0 0 280px;
+  max-width: 320px;
+  border: 2px solid black;
+  padding: 25px;
+  min-height: 450px;
+  transition: 
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  background-color: white;
+}
+
+/* Hover animation */
+.pricing-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Headings */
+.pricing-card h2 {
+  margin-bottom: 8px;
+}
+
+/* Price */
+.price {
+  font-weight: bold;
+  margin-bottom: 20px;
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
+}
+
+/* Feature list */
+.pricing-card ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  margin: 20px 0;
+}
+
+.pricing-card li {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+/* Button */
+button {
+  background-color: #f4c430;
+  border: none;
+  padding: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 
+    background-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+/* Button hover */
+button:hover {
+  background-color: #e0b11f;
+  transform: scale(1.05);
+}
+
+/* Ordering & emphasis */
+.basic-plan {
+  order: 1;
+}
+
+.pro-plan {
+  order: 2;
+  flex-grow: 2;
+  background-color: #f0f8ff;
+}
+
+.premium-plan {
+  order: 3;
+}
+
+/* ------------------------
+   RESPONSIVE BREAKPOINTS
+------------------------- */
+
+/* Tablets */
+@media (max-width: 900px) {
+  .pricing-card {
+    flex: 0 0 45%;
+  }
+
+  .pro-plan {
+    flex-grow: 0;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  body {
+    padding: 30px 15px;
+  }
+
+  .pricing-card {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .pricing-card:hover {
+    transform: none; /* prevent jump on touch */
+    box-shadow: none;
+  }
+}
